@@ -19,10 +19,10 @@ if torch.cuda.is_available():
         dtype = torch.float16
 
     print("CUDA is available.")
-    
+
     _model = pipeline(
         "text-generation",
-        model="meta-llama/Llama-4-Scout-17B-16E-Instruct", #"meta-llama/Llama-4-Scout-17B-16E-Instruct", #"meta-llama/Llama-3.2-3B", meta-llama/Llama-3.3-70B-Instruct
+        model="bigscience/bloomz-560m", #"bigscience/bloomz-560m", #"meta-llama/Llama-3.2-3B", meta-llama/Llama-3.3-70B-Instruct
         torch_dtype=dtype, 
         device_map="auto",  # Hoặc có thể thử "cpu" nếu không ổn,
         max_new_tokens=256,
@@ -32,7 +32,7 @@ else:
     print("No GPU available, using CPU.")
     _model = pipeline(
         "text-generation",
-        model="meta-llama/Llama-4-Scout-17B-16E-Instruct", #"meta-llama/Llama-4-Scout-17B-16E-Instruct", #"meta-llama/Llama-3.2-3B", meta-llama/Llama-3.3-70B-Instruct
+        model="bigscience/bloomz-560m", #"bigscience/bloomz-560m", #"meta-llama/Llama-3.2-3B", meta-llama/Llama-3.3-70B-Instruct
         device_map="cpu",
         max_new_tokens=256,
         token = "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"
